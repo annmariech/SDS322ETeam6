@@ -16,7 +16,7 @@ Our goal is to explore key variables such as the lethality of the incident, type
 
 ### Visualizations
 ![Figure 1](visuals/figure%201.png)
-![Figure 2](visuals/figure%202.png)
+![Figure 2](visuals/figure%203.png)
 Our early visualizations showed us that there are usually more traffic fatalities at the beginning and end of the day. We hypothesize we can find relationships between these chunks of times and factors like speeding, running red lights, and suspected impairment. Similarly, we think we will find these factors to be associated with the months that have the highest and lowest number of traffic fatalities.
 Failure to stop and render aid, having a suspected impairment, and running a red light may be predictive of having more fatalities in the accident.
 
