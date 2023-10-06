@@ -1,6 +1,6 @@
 ---
 title: "READ_ME"
-authors: "AJ Lewis, "
+authors: "AJ Lewis, Thang Truong, Adrian Barajas, Sarah Tu, Nicole Wu, Annmarie Change"
 date: "2023-10-03"
 output: html_document
 ---
