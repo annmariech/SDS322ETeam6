@@ -1,0 +1,73 @@
+---
+title: "Project Part 1 Visualizations"
+output: html_document
+date: "2023-10-06"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r }
+# Load the libraries
+library(ggplot2)
+library(dplyr)
+library(magrittr)
+
+# Load data from .csv file
+data <- read.csv("~/dataset_merge.csv")
+
+# Create Plot 1: Number of Fatalities by Hour
+data  %>% 
+  filter(speeding != 'u') %>% 
+  ggplot(aes(x = hour, y = number_of_fatalities, fill = speeding)) +
+  geom_bar(stat = "identity") +
+  labs(x = "Hour", y = "Number of Fatalities") +
+  ggtitle("Number of Fatalities by Hour")
+
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+# Make a bargraph for the total number of occurrences of fatal crashes at different times of day from 2013-2019
+
+library(openxlsx)
+library(readxl)
+library(ggplot2)
+library(dplyr)
+library(lubridate)
+
+data <- read.csv("~/dataset_merge.csv")
+
+# Remove rows with unknown values
+clean_data <- data %>%
+  filter(ran_red_light != "u")
+
+# Extract the hour from the time column
+clean_data <- clean_data %>%
+  mutate(hour = hour(hms(time)))  # Assuming "time" is in HH:MM format
+
+# Create a bar graph
+ggplot(clean_data, aes(x = factor(hour), fill = ran_red_light)) +
+  geom_bar(position = "dodge", alpha = 0.7) +
+  labs(
+    x = "Hour",
+    y = "Count of Fatalities",
+    title = "Total number of fatalities and time of occurrence across years 2013-2019",
+    fill = "Ran Red Light"
+  ) +
+  scale_fill_manual(values = c("y" = "red", "n" = "black" )) +
+  theme_minimal()
+
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
