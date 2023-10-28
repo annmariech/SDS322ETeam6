@@ -15,7 +15,7 @@ rmarkdown::site_generator()
 
 <br>
 
-# Welcome! I am Bevo XV. 
+# Welcome! I am nicole
   
 </br>
 
