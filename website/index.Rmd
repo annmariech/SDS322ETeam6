@@ -11,20 +11,22 @@ output:
 rmarkdown::site_generator()
 ```
  
+ 
 <img src="avatar.jpg" style=width:40% class="img-circle">
 
 <br>
 
-# Welcome! I am Bevo XV. 
+# Traffic Fatalities in Austin, TX 2013-2019
   
 </br>
 
-##### I weigh almost one ton and my horns are ~5 feet long from tip to tip.
+### Welcome to the Traffic Fatalities in Austin, TX 2013-2019 project! Our mission is to delve deep into comprehensive datasets gathered by the city of Austin related to traffic violations and fatalities that took place from 2013 to 2019.
 
-##### I enjoy football and chewing on various grasses. 
+#### Our goal is to explore key variables such as the lethality of the incident, type of violation, type of road being driven on, date, driver's license status, coordinate location within the city of Austin, and the time of day when these incidents occurred. By harnessing the power of data analysis and predictive modeling, our primary objective is to develop a sophisticated model that can accurately predict the likelihood of individuals being involved in a fatal accident within the city of Austin.
 
-##### I do not like the UGA Bulldog and I do not hold any advanced degrees.  
 
-##### I don't have any data-related projects either, but if I did you could find them [here](/portfolio)!
+##### Our project is linked [here](/portfolio)!
+
+##### Check out more about our project in our GitHub Page linked [here] (https://github.com/annmariech/SDS322ETeam6)
 
 ---
