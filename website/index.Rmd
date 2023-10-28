@@ -1,0 +1,30 @@
+---
+title: ' '
+pagetitle: 'Your Name'
+output: 
+  html_document: 
+    css: "styles.css"
+---
+
+```{R echo=F, eval=F}
+#to build this website into the _site directory, run
+rmarkdown::site_generator()
+```
+ 
+<img src="avatar.jpg" style=width:40% class="img-circle">
+
+<br>
+
+# Welcome! I am Bevo XV. 
+  
+</br>
+
+##### I weigh almost one ton and my horns are ~5 feet long from tip to tip.
+
+##### I enjoy football and chewing on various grasses. 
+
+##### I do not like the UGA Bulldog and I do not hold any advanced degrees.  
+
+##### I don't have any data-related projects either, but if I did you could find them [here](/portfolio)!
+
+---
