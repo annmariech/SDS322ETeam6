@@ -1,0 +1,11 @@
+name: "SDS Team 6"
+navbar:
+  title: "Traffic Fatalities"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Visualizations"
+      href: portfolio.html
+  right: 
+    - icon: fa-github fa-lg
+      href: https://github.com/annmariech/SDS322ETeam6

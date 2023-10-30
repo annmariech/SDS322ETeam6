@@ -32,6 +32,8 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-6.4.0/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.0/css/v4-shims.min.css" rel="stylesheet" />
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -92,6 +94,80 @@ pre code {
 </style>
 
 
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
 
 <!-- tabsets -->
 
@@ -157,6 +233,37 @@ pre code {
 
 
 
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Traffic Fatalities</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="portfolio.html">Visualizations</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/annmariech/SDS322ETeam6">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
 <div id="header">
 
 
@@ -165,34 +272,36 @@ pre code {
 </div>
 
 
-<p><img src="avatar.jpg" style=width:40% class="img-circle"></p>
-<p><br></p>
-<div id="welcome-i-am-bevo-xv." class="section level1">
-<h1>Welcome! I am Bevo XV.</h1>
+<br>
+<h1>
+Welcome to the Traffic Fatalities in Austin, TX 2013-2019 project!
+<h1>
+<p><br> <img src="trafficpage.jpeg"></p>
 <p></br></p>
+<b>Our mission: </b> <font size="+1">
+<p>
+To delve deep into comprehensive datasets gathered by the city of Austin
+related to traffic violations and fatalities that took place from 2013
+to 2019.
+</p>
+<p></font></p>
+<b>Our goal:</b> <font size="+1"> </b>
+<p>
+To explore key variables such as the lethality of the incident, type of
+violation, type of road being driven on, date, driver’s license status,
+coordinate location within the city of Austin, and the time of day when
+these incidents occurred. By harnessing the power of data analysis and
+predictive modeling, our primary objective is to develop a sophisticated
+model that can accurately predict the likelihood of individuals being
+involved in a fatal accident within the city of Austin.
+</p>
+<p></font></p>
 <div
-id="i-weigh-almost-one-ton-and-my-horns-are-5-feet-long-from-tip-to-tip."
+id="check-out-more-about-our-project-in-our-github-page-linked-here"
 class="section level5">
-<h5>I weigh almost one ton and my horns are ~5 feet long from tip to
-tip.</h5>
-</div>
-<div id="i-enjoy-football-and-chewing-on-various-grasses."
-class="section level5">
-<h5>I enjoy football and chewing on various grasses.</h5>
-</div>
-<div
-id="i-do-not-like-the-uga-bulldog-and-i-do-not-hold-any-advanced-degrees."
-class="section level5">
-<h5>I do not like the UGA Bulldog and I do not hold any advanced
-degrees.</h5>
-</div>
-<div
-id="i-dont-have-any-data-related-projects-either-but-if-i-did-you-could-find-them-here"
-class="section level5">
-<h5>I don’t have any data-related projects either, but if I did you
-could find them <a href="/portfolio">here</a>!</h5>
+<h5>Check out more about our project in our GitHub Page linked <a
+href="https://github.com/annmariech/SDS322ETeam6">here</a></h5>
 <hr />
-</div>
 </div>
 
 

@@ -10,23 +10,22 @@ output:
 #to build this website into the _site directory, run
 rmarkdown::site_generator()
 ```
- 
- 
-<img src="avatar.jpg" style=width:40% class="img-circle">
-
 <br>
+<h1>Welcome to the Traffic Fatalities in Austin, TX 2013-2019 project! <h1>
+ <br>
+<img src="trafficpage.jpeg">
 
-# Traffic Fatalities in Austin, TX 2013-2019
+
   
 </br>
 
-### Welcome to the Traffic Fatalities in Austin, TX 2013-2019 project! Our mission is to delve deep into comprehensive datasets gathered by the city of Austin related to traffic violations and fatalities that took place from 2013 to 2019.
 
-#### Our goal is to explore key variables such as the lethality of the incident, type of violation, type of road being driven on, date, driver's license status, coordinate location within the city of Austin, and the time of day when these incidents occurred. By harnessing the power of data analysis and predictive modeling, our primary objective is to develop a sophisticated model that can accurately predict the likelihood of individuals being involved in a fatal accident within the city of Austin.
+<b>Our mission: </b>  <font size="+1"><p> To delve deep into comprehensive datasets gathered by the city of Austin related to traffic violations and fatalities that took place from 2013 to 2019. </p></font>
+
+<b>Our goal:</b> <font size="+1"> </b> <p>To explore key variables such as the lethality of the incident, type of violation, type of road being driven on, date, driver's license status, coordinate location within the city of Austin, and the time of day when these incidents occurred. By harnessing the power of data analysis and predictive modeling, our primary objective is to develop a sophisticated model that can accurately predict the likelihood of individuals being involved in a fatal accident within the city of Austin. </p></font>
 
 
-##### Our project is linked [here](/portfolio)!
 
-##### Check out more about our project in our GitHub Page linked [here] (https://github.com/annmariech/SDS322ETeam6)
+##### Check out more about our project in our GitHub Page linked [here](https://github.com/annmariech/SDS322ETeam6)
 
 ---

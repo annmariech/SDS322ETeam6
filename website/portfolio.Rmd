@@ -1,6 +1,6 @@
 ---
-title: "Portfolio"
-pagetitle: 'Portfolio'
+title: "Visualizations"
+pagetitle: 'Visualizations'
 output: 
   html_document: 
     css: "styles.css"
@@ -11,16 +11,41 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 ```
 
 
-*Check out some examples of my work below*
+*Check out some examples of our visualizations*
 
 <br>
 
-- <i class="fa fa-chart-line"> </i> [Project 1: Description](https://www.github.com)
+<h2>Visualization 1-</h2> 
 
-    - Longer Description
+<h3> Relationship between Number of Fatalities and Time of Day </h3>
+
+<img src="traffic1.png">
+<u><strong> Hypothesis 1:</strong> </u> <br>
+<b>  Null hypothesis: </b>  Drivers are just as likely to be involved in a traffic fatality at any hour of the day </p>
+
+ <b>  Alternate hypothesis: </b>  <p> Drivers are more likely to be involved in a traffic fatality at specific hours during the day, namely late at night.</p>
+ <b>  Explanation: </b> <p>     This graph supports our alternative hypothesis, and shows that early morning also is a high traffic fatality time. The speeding information is not relevant for this specific hypothesis. </p>
+    
+<u><strong> Hypothesis 2:</strong> </u> <br>
+ <b>  Null hypothesis: </b> <p>There is no relationship between running a red light or not and the number of fatalities in the accident.
+ </p>
+
+ <b>  Alternate hypothesis: </b> <p> Accidents where a red light was run are more likely to have higher fatality counts.</p>
+ <b>  Explanation: </b> <p>Our data seems to refute the alternate hypothesis we made, as well as our null hypothesis. Accidents where a red light was not run had higher fatality counts.
+ </p>
 
 <br>
+<h2>Visualization 2-</h2> 
+<h3> Speeding and the Average Number of Fatalities from 2013-2018 </h3>
 
-- <i class="fa fa-chart-pie"> </i> [Project 2: Description](https://www.google.com)
+ <img src="traffic3.png">
+ 
+ <b>  Null hypothesis: </b> <p>The likelihood of fatality as a result of drivers who were speeding is equal to the likelihood of fatality as a result of drivers who did not speed.
+ </p>
 
-    - Longer Description
+ <b>  Alternate hypothesis: </b> <p> The likelihood of fatality as a result of drivers who were speeding is greater than the likelihood of fatality as a result of drivers who did not speed.
+</p>
+ <b>  Explanation: </b> <p>There is not much difference and a lot of overlap with error bars between speeding and non-speeding traffic fatality occurrences. This looks in favor of the null, but we should check with more variables to see if speeding interacts with any of them.
+ </p>
+
+

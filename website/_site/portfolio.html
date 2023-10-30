@@ -11,7 +11,7 @@
 
 
 
-<title>Portfolio</title>
+<title>Visualizations</title>
 
 <script src="site_libs/header-attrs-2.24/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -94,6 +94,80 @@ pre code {
 </style>
 
 
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
 
 <!-- tabsets -->
 
@@ -159,32 +233,112 @@ pre code {
 
 
 
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Traffic Fatalities</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="portfolio.html">Visualizations</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/annmariech/SDS322ETeam6">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
 <div id="header">
 
 
 
-<h1 class="title toc-ignore">Portfolio</h1>
+<h1 class="title toc-ignore">Visualizations</h1>
 
 </div>
 
 
-<p><em>Check out some examples of my work below</em></p>
+<p><em>Check out some examples of our visualizations</em></p>
 <p><br></p>
-<ul>
-<li><p><i class="fa fa-chart-line"> </i> <a
-href="https://www.github.com">Project 1: Description</a></p>
-<ul>
-<li>Longer Description</li>
-</ul></li>
-</ul>
-<p><br></p>
-<ul>
-<li><p><i class="fa fa-chart-pie"> </i> <a
-href="https://www.google.com">Project 2: Description</a></p>
-<ul>
-<li>Longer Description</li>
-</ul></li>
-</ul>
+<h2>
+Visualization 1-
+</h2>
+<h3>
+Relationship between Number of Fatalities and Time of Day
+</h3>
+<img src="traffic1.png"> <u><strong> Hypothesis 1:</strong> </u> <br>
+<b> Null hypothesis: </b> Drivers are just as likely to be involved in a
+traffic fatality at any hour of the day
+</p>
+<b> Alternate hypothesis: </b>
+<p>
+Drivers are more likely to be involved in a traffic fatality at specific
+hours during the day, namely late at night.
+</p>
+<b> Explanation: </b>
+<p>
+This graph supports our alternative hypothesis, and shows that early
+morning also is a high traffic fatality time. The speeding information
+is not relevant for this specific hypothesis.
+</p>
+<u><strong> Hypothesis 2:</strong> </u> <br> <b> Null hypothesis: </b>
+<p>
+There is no relationship between running a red light or not and the
+number of fatalities in the accident.
+</p>
+<b> Alternate hypothesis: </b>
+<p>
+Accidents where a red light was run are more likely to have higher
+fatality counts.
+</p>
+<b> Explanation: </b>
+<p>
+Our data seems to refute the alternate hypothesis we made, as well as
+our null hypothesis. Accidents where a red light was not run had higher
+fatality counts.
+</p>
+<br>
+<h2>
+Visualization 2-
+</h2>
+<h3>
+Speeding and the Average Number of Fatalities from 2013-2018
+</h3>
+<p><img src="traffic3.png"></p>
+<b> Null hypothesis: </b>
+<p>
+The likelihood of fatality as a result of drivers who were speeding is
+equal to the likelihood of fatality as a result of drivers who did not
+speed.
+</p>
+<b> Alternate hypothesis: </b>
+<p>
+The likelihood of fatality as a result of drivers who were speeding is
+greater than the likelihood of fatality as a result of drivers who did
+not speed.
+</p>
+<b> Explanation: </b>
+<p>
+There is not much difference and a lot of overlap with error bars
+between speeding and non-speeding traffic fatality occurrences. This
+looks in favor of the null, but we should check with more variables to
+see if speeding interacts with any of them.
+</p>
 
 
 
