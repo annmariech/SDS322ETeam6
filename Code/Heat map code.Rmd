@@ -1,0 +1,88 @@
+---
+title: "Heatmap code"
+output: html_document
+date: "2023-11-19"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+
+```{r}
+#To create a heatmap of the City of Austin
+library(ggplot2)
+library(lubridate)
+library(dplyr)
+library(sf)      # for spatial data
+library(tmap)    # for static maps
+
+# Read your dataset
+data <- read.csv("~/dataset_merged.csv")
+
+# Convert date to Date class
+data$date <- as.Date(data$date, format = "%m/%d/%Y")
+
+# Create a new column for year using year() function
+data$year <- lubridate::year(data$date)
+
+# Select columns that begin with x_ or y_ and filter the ranges to -97 - -98 degrees longitude and 30 - 31 latitude
+xy_cols <- data %>%
+  filter(x_coord >= -98 & x_coord <= -97 & y_coord >= 30 & y_coord <= 31) %>%
+  select(x_coord, y_coord, number_of_fatalities, year)
+
+# Ensure numeric data types for plotting
+xy_cols$x_coord <- as.numeric(xy_cols$x_coord)
+xy_cols$y_coord <- as.numeric(xy_cols$y_coord)
+xy_cols$number_of_fatalities <- as.numeric(xy_cols$number_of_fatalities)
+
+# Convert to sf object and set projection
+sf_obj <- st_as_sf(xy_cols, coords = c("x_coord", "y_coord"))
+st_crs(sf_obj) <- st_crs("+proj=longlat +datum=WGS84")
+
+# Set breaks for symbols
+breaks <- c(0, 1, 2, 3, 4)
+
+# Set default legend font size
+tmap_options(legend.text.size = 1.0)
+
+# Set SHAPE_RESTORE_SHX config option to YES
+options("SHAPE_RESTORE_SHX" = "YES")
+
+# Read the shapefile of Austin
+austin_shapefile <- st_read("~/SimplyAnalytics_Shapefiles_2023-09-19_13_54_05_d2dd0c81db17acfecb071c0a32565677.shp")
+
+# Create a static map with tmap
+map <- tm_shape(sf_obj) +
+  tm_symbols(
+    size = "number_of_fatalities",
+    col = "red",
+    alpha = 0.7,
+    breaks = breaks,
+    style = "fixed",
+    scale = 0.6
+  ) +
+  tm_layout(
+    frame = FALSE,
+    inner.margins = c(0.2, 0.2, 0.2, 0.2),
+    legend.position = c("right", "top"),
+    legend.outside = TRUE
+  ) +
+  tm_facets(by = "year", free.scales = TRUE)
+
+# Display the map without borders first
+map1 <- map
+
+# Add borders separately for the shapefile
+map2 <- tm_shape(austin_shapefile) +
+  tm_borders(lwd = .1, col = "blue")
+
+# Combine both maps
+final_map <- map1 + map2
+
+# Display the final map
+final_map
+```
+
