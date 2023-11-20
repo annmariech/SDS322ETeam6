@@ -42,9 +42,6 @@ xy_cols$number_of_fatalities <- as.numeric(xy_cols$number_of_fatalities)
 sf_obj <- st_as_sf(xy_cols, coords = c("x_coord", "y_coord"))
 st_crs(sf_obj) <- st_crs("+proj=longlat +datum=WGS84")
 
-# Set breaks for symbols
-breaks <- c(0, 1, 2, 3, 4)
-
 # Set default legend font size
 tmap_options(legend.text.size = 1.0)
 
@@ -54,23 +51,28 @@ options("SHAPE_RESTORE_SHX" = "YES")
 # Read the shapefile of Austin
 austin_shapefile <- st_read("~/SimplyAnalytics_Shapefiles_2023-09-19_13_54_05_d2dd0c81db17acfecb071c0a32565677.shp")
 
+tmap_mode("plot")
+
 # Create a static map with tmap
 map <- tm_shape(sf_obj) +
   tm_symbols(
     size = "number_of_fatalities",
     col = "red",
     alpha = 0.7,
-    breaks = breaks,
-    style = "fixed",
-    scale = 0.6
+    scale = .6,
+    legend.size.show = FALSE
+  ) +
+  tm_facets(by = "year", free.scales = TRUE
+  ) +
+    tm_add_legend(type = "symbol", col = "red", labels = "Number of Fatalities", size = .7
   ) +
   tm_layout(
     frame = FALSE,
     inner.margins = c(0.2, 0.2, 0.2, 0.2),
-    legend.position = c("right", "top"),
-    legend.outside = TRUE
-  ) +
-  tm_facets(by = "year", free.scales = TRUE)
+    legend.outside = TRUE,
+    legend.position = c(-.555,.43),
+    legend.text.size = 0.7
+  ) 
 
 # Display the map without borders first
 map1 <- map
