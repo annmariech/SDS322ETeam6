@@ -4,10 +4,14 @@ pagetitle: 'Visualizations'
 output: 
   html_document: 
     css: "styles.css"
+site: _site.yml  # Specify the site configuration file
 ---
 
 ```{r, include=FALSE}
 htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+
+rmarkdown::render("portfolio.Rmd", output_file = "../portfolio.html")
+
 ```
 
 

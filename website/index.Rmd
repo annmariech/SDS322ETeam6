@@ -6,14 +6,18 @@ output:
     css: "styles.css"
 ---
 
+
 ```{R echo=F, eval=F}
-#to build this website into the _site directory, run
-rmarkdown::site_generator()
+
+# Render the R Markdown document
+# Remember to set the working directory to the folder contains index.Rmd
+rmarkdown::render("index.Rmd", output_file = "../index.html")
+
 ```
 <br>
 <h1>Welcome to the Traffic Fatalities in Austin, TX 2013-2019 project! <h1>
  <br>
-<img src="trafficpage.jpeg">
+<img src="../visuals/figure2.png">
 
 
   
