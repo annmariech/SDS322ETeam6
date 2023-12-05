@@ -7,9 +7,10 @@ output:
 site: _site.yml  # Specify the site configuration file
 ---
 
-```{r, include=FALSE}
+```{r, eval=FALSE}
 htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
+# Render the R Markdown document
 rmarkdown::render("portfolio.Rmd", output_file = "../portfolio.html")
 
 ```
@@ -23,7 +24,7 @@ rmarkdown::render("portfolio.Rmd", output_file = "../portfolio.html")
 
 <h3> Relationship between Number of Fatalities and Time of Day </h3>
 
-<img src="traffic1.png">
+<img src="../visuals/figure3.png">
 <u><strong> Hypothesis 1:</strong> </u> <br>
 <b>  Null hypothesis: </b>  Drivers are just as likely to be involved in a traffic fatality at any hour of the day </p>
 
@@ -40,9 +41,9 @@ rmarkdown::render("portfolio.Rmd", output_file = "../portfolio.html")
 
 <br>
 <h2>Visualization 2-</h2> 
-<h3> Speeding and the Average Number of Fatalities from 2013-2018 </h3>
+<h3> Speeding and the Average Number of Fatalities from 2013-2019</h3>
 
- <img src="traffic3.png">
+ <img src="../visuals/figure2.png">
  
  <b>  Null hypothesis: </b> <p>The likelihood of fatality as a result of drivers who were speeding is equal to the likelihood of fatality as a result of drivers who did not speed.
  </p>
