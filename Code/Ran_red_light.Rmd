@@ -1,0 +1,33 @@
+# Make a bargraph for the total number of occurrences of fatal crashes at different times of day from 2013-2019
+
+library(openxlsx)
+library(readxl)
+library(ggplot2)
+library(dplyr)
+library(lubridate)
+
+data <- read.csv("dataset_merged.csv")
+
+# Remove rows with unknown values
+clean_data <- data %>%
+  filter(ran_red_light != "u")
+
+# Convert values in the ran_red_light column to lowercase
+clean_data <- clean_data %>%
+  mutate(ran_red_light = tolower(ran_red_light))  # Convert to lowercase
+
+# Extract the hour from the time column
+clean_data <- clean_data %>%
+  mutate(hour = hour(hms(time)))  # Assuming "time" is in HH:MM format
+
+# Create a bar graph
+ggplot(clean_data, aes(x = factor(hour), fill = ran_red_light)) +
+  geom_bar(position = "stack", alpha = 0.7) +  # Change position to "stack"
+  labs(
+    x = "Hour",
+    y = "Count of Fatalities",
+    title = "Total number of fatalities and time of occurrence across years 2013-2019",
+    fill = "Ran Red Light"
+  ) +
+  scale_fill_manual(values = c("n" = "blue", "y" = "red" )) +  # Swap colors for "n" and "y"
+  theme_minimal()
