@@ -4,6 +4,7 @@ pagetitle: 'Your Name'
 output: 
   html_document: 
     css: "styles.css"
+site: _site.yml  # Specify the site configuration file
 ---
 
 
@@ -24,10 +25,21 @@ rmarkdown::render("index.Rmd", output_file = "../index.html")
 </br>
 
 
-<b>Our mission: </b>  <font size="+1"><p> To delve deep into comprehensive datasets gathered by the city of Austin related to traffic violations and fatalities that took place from 2013 to 2019. </p></font>
 
-<b>Our goal:</b> <font size="+1"> </b> <p>To explore key variables such as the lethality of the incident, type of violation, type of road being driven on, date, driver's license status, coordinate location within the city of Austin, and the time of day when these incidents occurred. By harnessing the power of data analysis and predictive modeling, our primary objective is to develop a sophisticated model that can accurately predict the likelihood of individuals being involved in a fatal accident within the city of Austin. </p></font>
 
+<h2>Our mission:</h2>
+<p>To delve deep into comprehensive datasets gathered by the city of Austin related to traffic violations and fatalities that took place from 2013 to 2019.</p>
+
+<h2>Dataset Information:</h2>
+<p>Dataset 1: APD Crash Fatality Data 2013-2019<br>
+Data was gathered from city of Austin and Austin Police Department<br>
+<a href="https://tinyurl.com/2suyu4yh">https://tinyurl.com/2suyu4yh</a></p>
+
+<p>Dataset 2: Austin Crash Report Data - Crash Level Records<br>
+<a href="https://data.austintexas.gov/Transportation-and-Mobility/Austin-Crash-Report-Data-Crash-Level-Records/y2wy-tgr5/data">https://data.austintexas.gov/Transportation-and-Mobility/Austin-Crash-Report-Data-Crash-Level-Records/y2wy-tgr5/data</a></p>
+
+<h2>Our goal:</h2>
+<p>To explore key variables such as the lethality of the incident, type of violation, type of road being driven on, date, driver's license status, coordinate location within the city of Austin, and the time of day when these incidents occurred. By harnessing the power of data analysis and predictive modeling, our primary objective is to develop a sophisticated model that can accurately predict the likelihood of individuals being involved in a fatal accident within the city of Austin.</p>
 
 
 ##### Check out more about our project in our GitHub Page linked [here](https://github.com/annmariech/SDS322ETeam6)

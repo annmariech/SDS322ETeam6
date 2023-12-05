@@ -15,16 +15,17 @@ rmarkdown::render("portfolio.Rmd", output_file = "../portfolio.html")
 
 ```
 
-
 *Check out some examples of our visualizations*
 
 <br>
 
 <h2>Visualization 1-</h2> 
 
-<h3> Relationship between Number of Fatalities and Time of Day </h3>
+<h3>**Relationship between Number of Fatalities and Time of Day**</h3>
+
 
 <img src="../visuals/figure3.png">
+
 <u><strong> Hypothesis 1:</strong> </u> <br>
 <b>  Null hypothesis: </b>  Drivers are just as likely to be involved in a traffic fatality at any hour of the day </p>
 
@@ -41,7 +42,7 @@ rmarkdown::render("portfolio.Rmd", output_file = "../portfolio.html")
 
 <br>
 <h2>Visualization 2-</h2> 
-<h3> Speeding and the Average Number of Fatalities from 2013-2019</h3>
+<h3> **Speeding and the Average Number of Fatalities from 2013-2019** </h3>
 
  <img src="../visuals/figure2.png">
  
@@ -53,4 +54,8 @@ rmarkdown::render("portfolio.Rmd", output_file = "../portfolio.html")
  <b>  Explanation: </b> <p>There is not much difference and a lot of overlap with error bars between speeding and non-speeding traffic fatality occurrences. This looks in favor of the null, but we should check with more variables to see if speeding interacts with any of them.
  </p>
 
-
+<h2>Other visualizations </h2>
+<img src="../visuals/figure4.png">
+<img src="../visuals/figure5.png">
+<img src="../visuals/figure6.png">
+<img src="../visuals/figure7.png">
